@@ -1,0 +1,28 @@
+<form [formGroup]="userForm">
+  <div class="form">
+    <div class="form__name">
+      <label for="name">Name:</label>
+      <input formControlName="name" id="name" type="text" placeholder="Input your name">
+      <div *ngIf="updatedFormState.name | isValueExists">Updated to: {{ updatedFormState.name }}</div>
+    </div>
+
+    <div class="form__gender">
+      <label>Gender:</label>
+
+      <div class="form__gender-radios">
+        <label for="male">Male</label>
+        <input formControlName="gender" id="male" type="radio" name="gender" value="male">
+
+        <label for="female">Female</label>
+        <input formControlName="gender" id="female" type="radio" name="gender" value="female">
+      </div>
+      <div *ngIf="updatedFormState.gender | isValueExists">Updated to: {{ updatedFormState.gender }}</div>
+    </div>
+
+    <div class="form__is-legal">
+      <label for="is-legal">Is legal:</label>
+      <input formControlName="isLegal" id="is-legal" type="checkbox">
+      <div *ngIf="updatedFormState.isLegal | isValueExists">Updated to: {{ updatedFormState.isLegal }}</div>
+    </div>
+  </div>
+</form>

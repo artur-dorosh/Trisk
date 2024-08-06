@@ -1,0 +1,18 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  &__name,
+  &__gender,
+  &__is-legal {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  &__gender-radios {
+    display: flex;
+  }
+}
