@@ -70,7 +70,6 @@ export class UserComponent implements OnInit, AfterViewInit {
       switchMap((formValue) => this.apiService.saveUserData(formValue)),
       map((userResponse: UserResponse) => userResponse.userInfo),
       tap((userData: User) => {
-        console.log(userData)
         const updatedState: Partial<User> = Object.keys(this.userForm.controls).reduce((acc: Partial<User>, control: string) => {
           if (this.currentFormState[control as keyof User] !== userData[control as keyof User]) {
             return { ...acc, [control]: userData[control as keyof User] };

@@ -27,7 +27,7 @@ export class ApiService {
 
   saveUserData(formValue: Partial<User>): Observable<UserResponse> {
     const dataForUpdate: Partial<User> = Object.entries(formValue)
-      .filter(([key, value]) => value !== null)
+      .filter(([, value]) => value !== null)
       .reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {});
     this.userData = { ...this.userData, ...dataForUpdate };
 
